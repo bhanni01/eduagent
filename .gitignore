@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+students.db
+chroma_db/
+node_modules/
+.DS_Store
+*.log
+science_grade6_english.pdf
+frontend/dist/
