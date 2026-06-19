@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar          { width: 4px; }
+::-webkit-scrollbar-track    { background: transparent; }
+::-webkit-scrollbar-thumb    { background: #fca5a5; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #f87171; }
+
+/* ── Shimmer button utility ─────────────────────────────────────────────── */
+.btn-shimmer {
+  background: linear-gradient(
+    110deg,
+    #b91c1c 0%,
+    #b91c1c 40%,
+    #ef4444 50%,
+    #b91c1c 60%,
+    #b91c1c 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 2.2s linear infinite;
+}
+
+/* ── Red glow shadow ────────────────────────────────────────────────────── */
+.shadow-red-glow {
+  box-shadow: 0 0 24px 4px rgba(185, 28, 28, 0.25),
+              0 4px 16px rgba(185, 28, 28, 0.15);
+}
+.shadow-red-sm {
+  box-shadow: 0 2px 12px rgba(185, 28, 28, 0.20);
+}
+
+/* ── Marquee track ──────────────────────────────────────────────────────── */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ── Chat message animations ────────────────────────────────────────────── */
+.msg-user { animation: slideRight 0.28s ease forwards; }
+.msg-bot  { animation: slideLeft  0.28s ease forwards; }
+
+/* ── Stat card stagger ──────────────────────────────────────────────────── */
+.stat-card { opacity: 0; }
+.stat-card.ready { animation: fadeUp 0.5s cubic-bezier(.22,.68,0,1.2) forwards; }
+
+/* ── Progress bar animated fill ─────────────────────────────────────────── */
+@keyframes fillBar {
+  from { width: 0%; }
+}
+.progress-fill { animation: fillBar 0.8s cubic-bezier(.22,.68,0,1.2) forwards; }
+
+/* ── Circular SVG draw-in ───────────────────────────────────────────────── */
+@keyframes drawCircle {
+  from { stroke-dashoffset: var(--full-circ); }
+}
+.circle-progress { animation: drawCircle 0.9s cubic-bezier(.22,.68,0,1.2) 0.2s forwards; }
+
+/* ── Red gradient text ──────────────────────────────────────────────────── */
+.text-gradient-red {
+  background: linear-gradient(135deg, #b91c1c, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Floating particle dots ─────────────────────────────────────────────── */
+@keyframes drift {
+  0%,100% { transform: translate(0,0) scale(1); opacity: 0.6; }
+  50%      { transform: translate(var(--dx), var(--dy)) scale(1.1); opacity: 0.9; }
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  animation: drift var(--dur) ease-in-out infinite;
+}
