@@ -32,20 +32,14 @@ water cycle, motion, nutrition.
 - Add Nepali language support so students can ask questions in Nepali
 
 ## Screenshots
-### Login
-![Login](screenshots/login.png)
+### Home
+![Home](screenshots/home.png)
 
-### Student Chat
-![Student Chat](screenshots/student_chat.png)
+### Student Conversation
+![Student Conversation](screenshots/student_conversation.png)
 
-### Parent Dashboard
-![Parent Dashboard](screenshots/parent_dashboard.png)
-
-### Terminal — Student Mode
-![Terminal Student](screenshots/terminal_student.png)
-
-### Terminal — Parent Mode
-![Terminal Parent](screenshots/terminal_parent.png)
+### Parent Conversation
+![Parent Conversation](screenshots/parent_conversation.png)
 
 ## Run Locally
 ### Backend
